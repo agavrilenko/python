@@ -1,16 +1,16 @@
-# This is a sample Python script.
+basket = [1,2,3,4,5,5]
+s = set(basket)
+print(type({1,2,3}))
+if True :
+  print("he")
+else: 
+  print("ho")
+count=0
+while count<1:
+  count+=1
+  print("up")
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def by_two(item):
+  return item*2
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(list(map(by_two, [1,2,3,4])))
