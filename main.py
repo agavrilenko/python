@@ -1,10 +1,15 @@
 
+from time import time
+
 #decorator - interseptor
 def another_dec_func(func):
   def wrapper(*args, **kwargs):
+    start = time()
     print('****WRAPPING*****')
-    func(*args,**kwargs)
+    result = func(*args,**kwargs)
     print('****END WRAPPING*****')
+    print(f'took {time() - start}')
+    return result
   return wrapper
 
 @another_dec_func
