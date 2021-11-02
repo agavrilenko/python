@@ -1,10 +1,42 @@
 
 from time import time
 
+#Generators
+
+class MyGen():
+  current = 0
+  def __init__(self, first, last):
+    self.first = first
+    self.last = last
+
+  def __next__(self):
+    if MyGen.current <= self.last :
+      num = MyGen.current
+      MyGen.current += 1
+      return num;    
+    raise StopIteration  
+
+  def __iter__(self):
+    return self
+
+gen = MyGen(1,100)
+for i in gen:
+  print(i)
+
+
+def generator_func(num):
+  for i in range(num):
+    yield i*3
+
+g = generator_func(5)
+print(next(g))
+print(next(g))
+print(next(g))
+
 #Exception handling
 while True:
   try:
-    age = int(input('tell me your age: '))
+    age = 10# int(input('tell me your age: '))
     10/age
   except ValueError as err:
     print(err)
