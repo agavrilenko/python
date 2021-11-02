@@ -1,6 +1,25 @@
 
 from time import time
 
+#Exception handling
+while True:
+  try:
+    age = int(input('tell me your age: '))
+    10/age
+  except ValueError as err:
+    print(err)
+    continue
+  except ZeroDivisionError as err1:
+    print(err1)
+    raise err1
+  else:
+    print(f'we are good age is {age}')  
+  finally:
+    print('I\'m done')  
+  print ('Bye!')  
+  break
+
+
 #decorator - interseptor
 def another_dec_func(func):
   def wrapper(*args, **kwargs):
