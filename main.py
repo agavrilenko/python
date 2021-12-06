@@ -1,37 +1,7 @@
-
+import utility
 from time import time
 
-#Generators
 
-class MyGen():
-  current = 0
-  def __init__(self, first, last):
-    self.first = first
-    self.last = last
-
-  def __next__(self):
-    if MyGen.current <= self.last :
-      num = MyGen.current
-      MyGen.current += 1
-      return num;    
-    raise StopIteration  
-
-  def __iter__(self):
-    return self
-
-gen = MyGen(1,100)
-for i in gen:
-  print(i)
-
-
-def generator_func(num):
-  for i in range(num):
-    yield i*3
-
-g = generator_func(5)
-print(next(g))
-print(next(g))
-print(next(g))
 
 #Exception handling
 while True:
@@ -121,3 +91,57 @@ new_dict = {k:v**2 for k,v in my_dict.items() if v%2==1}
 print(new_dict)
 new_dict = {str(k):k*2 for k in [1,2,3,4,5]}
 print(new_dict)
+
+#Generators
+
+class MyGen():
+  current = 0
+  def __init__(self, first, last):
+    self.first = first
+    self.last = last
+
+  def __next__(self):
+    if MyGen.current <= self.last :
+      num = MyGen.current
+      MyGen.current += 1
+      return num;    
+    raise StopIteration  
+
+  def __iter__(self):
+    return self
+
+gen = MyGen(1,100)
+for i in gen:
+  print(i)
+
+
+def generator_func(num):
+  for i in range(num):
+    yield i*3
+
+g = generator_func(5)
+print(next(g))
+print(next(g))
+print(next(g))
+
+
+def fib(number):
+  a = 0
+  b = 1
+  for i in range(number):
+    yield a
+    tmp = a
+    a = b
+    b = tmp + b
+
+for x in fib(1):
+  print(x)
+
+
+def multiply(*args):
+  tmp = 1
+  for i in args:
+    tmp=tmp*i;
+  return tmp
+
+print(utility)
