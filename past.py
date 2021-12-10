@@ -1,6 +1,6 @@
 from utility import *
 from time import time
-
+import random
 
 
 #Exception handling
@@ -164,3 +164,11 @@ for x in data:
 for dup in dups.items():
   if dup[1] > 1:
     print(dup)
+
+rnd = random.randint(1,10)
+while True:
+  n = int(input('Enter number:'))
+  if n == rnd:
+    print('Congrats')
+    break
+print('Bye!')

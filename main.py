@@ -1,8 +1,11 @@
-import random
-rnd = random.randint(1,10)
-while True:
-  n = int(input('Enter number:'))
-  if n == rnd:
-    print('Congrats')
-    break
-print('Bye!')
+import collections
+import datetime
+import time
+
+print(datetime.date.today())
+
+list = collections.OrderedDict()
+list['a'] = 1
+list['b'] = 3
+print(list)
+print(time.time())
