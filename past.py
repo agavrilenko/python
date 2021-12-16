@@ -1,6 +1,10 @@
 from utility import *
 from time import time
 import random
+import collections
+import datetime
+import time
+from array import array
 
 
 #Exception handling
@@ -172,3 +176,28 @@ while True:
     print('Congrats')
     break
 print('Bye!')
+
+print(datetime.date.today())
+
+list = collections.OrderedDict()
+list['a'] = 1
+list['b'] = 3
+print(list)
+print(time.time())
+
+arr = array('i', [1,2,4,5,6])
+print(arr)
+
+try:
+  with open('file.txt', mode = 'r+') as file:
+    print(file.readlines())
+    file.write('\n')
+    file.write('new line added')
+    file.seek(0)
+    print(file.readlines())
+except BaseException as err:
+  print('File does not exist')
+  raise err
+
+
+  
